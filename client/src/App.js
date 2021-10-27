@@ -6,7 +6,7 @@ function App() {
 
   useEffect(() => {
     async function getData() {
-      const url = `${API_URL}/recipes`;
+      const url = `${API_URL}/quotes`;
       const response = await fetch(url);
       const data = await response.json();
       setData(data);
@@ -16,13 +16,14 @@ function App() {
 
   return (
     <>
-      <h1>MERN App!</h1>
+      <h1>Quotr</h1>
       <p>Data from server:</p>
       <ul>
         {data.map((item) => {
           return (
             <li key={item._id}>
-              <strong>{item.title}</strong> (<code>{item._id}</code>)
+              {item.title}
+              {item.author}
             </li>
           );
         })}
