@@ -1,33 +1,38 @@
 import { useEffect, useState } from "react";
+import { Router } from "@reach/router";
+
+import Quote from "./Quote";
+import Quotes from "./Quotes";
+import Navigation from "./Navigation";
+
 const API_URL = process.env.REACT_APP_API;
 
 function App() {
-  const [data, setData] = useState([]);
+  const [quotes, setQuotes] = useState([]);
 
   useEffect(() => {
     async function getData() {
       const url = `${API_URL}/quotes`;
+
       const response = await fetch(url);
       const data = await response.json();
-      setData(data);
+      setQuotes(data);
     }
     getData();
   }, []);
 
+  function getQuote(id) {
+    return quotes.find(quote => quote.id === parseInt(id));
+  }
+
+
   return (
     <>
-      <h1>Quotr</h1>
-      <p>Data from server:</p>
-      <ul>
-        {data.map((item) => {
-          return (
-            <li key={item._id}>
-              {item.title}
-              {item.author}
-            </li>
-          );
-        })}
-      </ul>
+      <Navigation></Navigation>
+      <Router>
+        <Quotes path="/" data={quotes} ></Quotes>
+        <Quote path="/quote/:id" getQuote={getQuote} ></Quote>
+      </Router>
     </>
   );
 }
