@@ -3,7 +3,7 @@ import { Router } from "@reach/router";
 
 import Quote from "./Quote";
 import Quotes from "./Quotes";
-import Navigation from "./Navigation";
+// import Navigation from "./Navigation";
 
 const API_URL = process.env.REACT_APP_API;
 
@@ -21,8 +21,8 @@ function App() {
     getData();
   }, []);
 
-  function getQuote(id) {
-    return quotes.find(quote => quote.id === parseInt(id));
+  function getQuote(_id) { 
+    return quotes.find(quote => quote._id === _id);
   }
 
   function addQuote(title) {
@@ -49,9 +49,11 @@ function App() {
   }
 
 
+
+
   return (
     <>
-      <Navigation></Navigation>
+      {/* <Navigation></Navigation> */}
       <Router>
         <Quotes path="/" data={quotes} addQuote={addQuote}></Quotes>
         <Quote path="/quote/:id" getQuote={getQuote} ></Quote>
