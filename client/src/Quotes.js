@@ -1,4 +1,5 @@
 import { Link } from "@reach/router";
+import AddQuote from "./AddQuote";
 
 function Quotes(props) {
     const { data, addQuote } = props;
@@ -19,6 +20,7 @@ function Quotes(props) {
               })
           }
         </ul>
+        <AddQuote addQuote={addQuote}/>
       </>
     );
   }

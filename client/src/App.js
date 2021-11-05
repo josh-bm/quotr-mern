@@ -25,16 +25,41 @@ function App() {
     return quotes.find(quote => quote.id === parseInt(id));
   }
 
+  function addQuote(title) {
+    console.log(title);
+  
+    const data = { 
+      title: title
+    };
+    const postData = async () => {
+      const url = `${API_URL}/quotes`;
+  
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      const reply = await response.json();
+      console.log(reply);
+  
+    }; 
+    postData();
+  }
+
 
   return (
     <>
       <Navigation></Navigation>
       <Router>
-        <Quotes path="/" data={quotes} ></Quotes>
+        <Quotes path="/" data={quotes} addQuote={addQuote}></Quotes>
         <Quote path="/quote/:id" getQuote={getQuote} ></Quote>
       </Router>
     </>
   );
 }
+
+
 
 export default App;
