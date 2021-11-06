@@ -14,7 +14,11 @@ function Quotes(props) {
             data.map((quote) => {
                 return (
                   <li key={quote._id}>
-                    <Link to={`/quote/${quote._id}`}>{quote.title}</Link>
+                    <Link to={`/quote/${quote._id}`}>
+                    {quote.title}
+                    <br/>
+                    {quote.likes} likes
+                    </Link>
                   </li>
                 );
               })

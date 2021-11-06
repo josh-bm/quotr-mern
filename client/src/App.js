@@ -20,7 +20,6 @@ function App() {
     }
     getData();
   }, []);
-  
 
   function getQuote(_id) { 
     return quotes.find(quote => quote._id === _id);

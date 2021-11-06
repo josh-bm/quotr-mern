@@ -39,7 +39,7 @@ quoteRoutes.get("/:id", async (req, res) => {
 
 quoteRoutes.put("/:id", async (req,res) => {
   try{
-    const quote = await Quote.findByIdAndUpdate(req.params.id, {$push: { comments: req.body.comments }});
+    const quote = await Quote.findByIdAndUpdate(req.params.id, {$push: { comments: req.body.comments }}, { returnDocument: "after" });
     res.status(201);
     res.json(quote);
   }
@@ -52,5 +52,22 @@ quoteRoutes.put("/:id", async (req,res) => {
   }
   console.log(req.body)
 });
+
+quoteRoutes.put("/:id", async (req,res) => {
+  try{
+    const quote = await Quote.findByIdAndUpdate(req.params.id, {$push:{likes:req.body.likes}}, { returnDocument: "after" });
+    res.status(201);
+    res.json(quote);
+  }
+  catch(error){
+    res.status(500);
+    res.json({
+      error:"Like could not be created",
+      details:error.toString(),
+    });
+  }
+  console.log(req.body)
+});
+
 
 export default quoteRoutes;
