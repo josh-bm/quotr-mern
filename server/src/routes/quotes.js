@@ -39,14 +39,14 @@ quoteRoutes.get("/:id", async (req, res) => {
 
 quoteRoutes.put("/:id", async (req,res) => {
   try{
-    const quote = await Quote.findByIdAndUpdate({_id:req.body.id},{$push:{comments: req.body.comments}});
+    const quote = await Quote.findByIdAndUpdate(req.params.id, {$push: { comments: req.body.comments }});
     res.status(201);
     res.json(quote);
   }
   catch(error){
     res.status(500);
     res.json({
-      error:"Quote could not be created",
+      error:"Comment could not be created",
       details:error.toString(),
     });
   }

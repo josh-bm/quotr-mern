@@ -10,7 +10,6 @@ function Quote(props) {
       console.log(comment);
     
       const data = { 
-        id:id,
         comments: comment
       };
       const postData = async () => {

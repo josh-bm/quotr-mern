@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function AddComment(props) {
-  const { _id, addComment } = props;
+  const { addComment } = props;
 
   const [comment, setComment] = useState("");
 
@@ -13,7 +13,7 @@ function AddComment(props) {
       <input onChange={(event) => setComment(event.target.value)} type="text" />
 
       <button type="button" onClick={(event) => {
-        addComment(_id, comment);
+        addComment(comment);
       }}>Post
       </button>
     </>
