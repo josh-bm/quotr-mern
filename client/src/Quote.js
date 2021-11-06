@@ -54,24 +54,51 @@ function Quote(props) {
     }
 
 
-
     // Conditional rendering
     if (quote === undefined) {
       return <p>Nothing here</p>;
     } else return (
       <>
-        <h3>{quote.title}</h3>
-  
-        <p>{quote.author}</p>
+ 
+                    <div className="card">
+                    <div className="card-content">  
+                      <p className="title">
+                        {quote.title}
+                      </p>
+                    </div>
+                    <footer className="card-footer">
+                    <p className="card-footer-item">
+                    <span>
+                    {quote.author}
+                    </span>
+                    </p>
+                    <p className="card-footer-item">
+                    <span>
+                    {quote.likes} likes
+                    </span>
+                    </p>
+                    </footer>
+                    </div>
 
-        <AddComment addComment={addComment}/>
+                    <article className="message is-dark">
+                    {quote.comments.map((item, i) => (
+                    <div className="message-body">
+                    <li key={item + i}>
+                      {item}
+                    </li>
+                    </div>
+                    ))}
+                    
+                    
+                    
+                    </article>
 
-        <AddLike addLike={addLike}/>
+                    
 
-        <p>{quote.comments}</p>
+                    <AddComment addComment={addComment}/>
 
-        <p>{quote.likes} likes</p>
-  
+                  <AddLike addLike={addLike}/>
+
       </>
     );
   }

@@ -37,7 +37,7 @@ quoteRoutes.get("/:id", async (req, res) => {
   }
 });
 
-quoteRoutes.put("/:id", async (req,res) => {
+quoteRoutes.put("/:id/comments", async (req,res) => {
   try{
     const quote = await Quote.findByIdAndUpdate(req.params.id, {$push: { comments: req.body.comments }}, { returnDocument: "after" });
     res.status(201);
@@ -53,9 +53,9 @@ quoteRoutes.put("/:id", async (req,res) => {
   console.log(req.body)
 });
 
-quoteRoutes.put("/:id", async (req,res) => {
+quoteRoutes.put("/:id/likes", async (req,res) => {
   try{
-    const quote = await Quote.findByIdAndUpdate(req.params.id, {$push:{likes:req.body.likes}}, { returnDocument: "after" });
+    const quote = await Quote.findByIdAndUpdate(req.params.id, {$push:{likes:req.body.likes}}, {$inc:{likes:1}}, { returnDocument: "after" });
     res.status(201);
     res.json(quote);
   }

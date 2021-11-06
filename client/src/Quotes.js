@@ -7,19 +7,35 @@ function Quotes(props) {
     return (
       <>
   
-  <h3>All Quotes</h3>
         <ul>
-          {
+        {
             // All quotes
             data.map((quote) => {
                 return (
-                  <li key={quote._id}>
+                  <li key={quote._id}> 
                     <Link to={`/quote/${quote._id}`}>
-                    {quote.title}
-                    <br/>
+                    <div className="card">
+                    <div className="card-content">  
+                      <p className="title">
+                        {quote.title}
+                      </p>
+                    </div>
+                    <footer className="card-footer">
+                    <p className="card-footer-item">
+                    <span>
+                    {quote.author}
+                    </span>
+                    </p>
+                    <p className="card-footer-item">
+                    <span>
                     {quote.likes} likes
+                    </span>
+                    </p>
+                    </footer>
+                    </div>
                     </Link>
                   </li>
+                  
                 );
               })
           }
