@@ -1,4 +1,3 @@
-
 function AddLike(props) {
   const { addLike } = props;
 
@@ -6,7 +5,7 @@ function AddLike(props) {
   return (
     <>
       <button type="button" onClick={(event) => {
-        addLike(addLike);
+        addLike();
       }}>Like
       </button>
     </>

@@ -55,7 +55,7 @@ quoteRoutes.put("/:id/comments", async (req,res) => {
 
 quoteRoutes.put("/:id/likes", async (req,res) => {
   try{
-    const quote = await Quote.findByIdAndUpdate(req.params.id, {$push:{likes:req.body.likes}}, {$inc:{likes:1}}, { returnDocument: "after" });
+    const quote = await Quote.findByIdAndUpdate(req.params.id, { $inc: { likes: 1 } }, { returnDocument: "after" });
     res.status(201);
     res.json(quote);
   }

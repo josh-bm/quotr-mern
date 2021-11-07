@@ -97,7 +97,7 @@ function Quote(props) {
 
                     <AddComment addComment={addComment}/>
 
-                  <AddLike addLike={addLike}/>
+                    <AddLike addLike={addLike}/>
 
       </>
     );
