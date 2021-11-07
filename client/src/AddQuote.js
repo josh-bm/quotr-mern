@@ -27,7 +27,7 @@ function AddQuote(props) {
       </div>
       </div>
 
-      <button type="button" onClick={(event) => {
+      <button type="button" className="button"onClick={(event) => {
         addQuote(title, author);
       }}>Post Quote
       </button>

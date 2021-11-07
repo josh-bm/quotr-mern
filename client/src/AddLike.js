@@ -4,7 +4,7 @@ function AddLike(props) {
   // Conditional rendering
   return (
     <>
-      <button type="button" onClick={(event) => {
+      <button type="button" className="button" onClick={(event) => {
         addLike();
       }}>Like
       </button>
@@ -13,3 +13,4 @@ function AddLike(props) {
 }
 
 export default AddLike;
+

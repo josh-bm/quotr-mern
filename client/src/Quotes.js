@@ -16,13 +16,13 @@ function Quotes(props) {
                     <Link to={`/quote/${quote._id}`}>
                     <div className="card  mt-6">
                     <div className="card-content">  
-                      <p className="title">
+                      <p className="title is-5 has-text-weight-normal">
                         {quote.title}
                       </p>
                     </div>
                     <footer className="card-footer">
                     <p className="card-footer-item">
-                    <span>
+                    <span className="has-text-weight-bold">
                     {quote.author}
                     </span>
                     </p>

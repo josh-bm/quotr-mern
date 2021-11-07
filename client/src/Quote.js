@@ -58,13 +58,13 @@ function Quote(props) {
         <div className="card mt-6">
           
           <div className="card-content">  
-            <p className="title">
+            <p className="title has-text-weight-normal">
               {quote.title}
             </p>
           </div>
           
           <footer className="card-footer">
-            <p className="card-footer-item">
+            <p className="card-footer-item has-text-weight-bold">
               <span>
               {quote.author}
               </span>
@@ -74,7 +74,13 @@ function Quote(props) {
               <span>
                 {quote.likes} likes
               </span>
+              <span className="ml-3">
+                <AddLike addLike={addLike}/>
+              </span>
             </p>
+
+
+           
           </footer>
           </div>
 
@@ -91,7 +97,7 @@ function Quote(props) {
           </article>
           
           <AddComment addComment={addComment}/>
-          <AddLike addLike={addLike}/>
+         
 
       </>
     );

@@ -37,7 +37,7 @@ quoteRoutes.get("/:id", async (req, res) => {
   }
 });
 
-quoteRoutes.put("/:id/comments", async (req,res) => {
+quoteRoutes.put("/:id", async (req,res) => {
   try{
     const quote = await Quote.findByIdAndUpdate(req.params.id, {$push: { comments: req.body.comments }}, { returnDocument: "after" });
     res.status(201);

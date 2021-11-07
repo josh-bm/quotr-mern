@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Router } from "@reach/router";
+import "../src/css/main.css"
 
 import Quote from "./Quote";
 import Quotes from "./Quotes";
@@ -25,11 +26,12 @@ function App() {
     return quotes.find(quote => quote._id === _id);
   }
 
-  function addQuote(title) {
+  function addQuote(title, author) {
     console.log(title);
   
     const data = { 
-      title: title
+      title: title,
+      author:author
     };
     const postData = async () => {
       const url = `${API_URL}/quotes`;

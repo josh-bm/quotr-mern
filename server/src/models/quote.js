@@ -5,7 +5,10 @@ const quoteSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  author: String,
+  author:{
+    type:String,
+    default:"Anonymous",
+  } ,
   comments: [{
     type: String
   }],
