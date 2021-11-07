@@ -11,7 +11,7 @@ function AddQuote(props) {
     <>
 
     <div className="container mt-6">
-      <h2>Post a quote</h2>
+      <h2 classNAME="mb-2">Post a quote</h2>
 
       <div className="field">
        <label className="label">Quote</label>
