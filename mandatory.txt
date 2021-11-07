@@ -1,0 +1,3 @@
+Joshua Bacurio Mercado WU-F21v
+https://quotr-mern.herokuapp.com/
+https://github.com/josh-bm/quotr-mern
