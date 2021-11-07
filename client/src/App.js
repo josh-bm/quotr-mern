@@ -53,11 +53,15 @@ function App() {
 
   return (
     <>
+    <div className="columns is-centered">
+      <div className="column is-half ">
       <Navigation></Navigation>
       <Router>
         <Quotes path="/" data={quotes} addQuote={addQuote}></Quotes>
         <Quote path="/quote/:id" getQuote={getQuote} ></Quote>
       </Router>
+      </div>
+      </div>
     </>
   );
 }

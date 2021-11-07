@@ -60,44 +60,43 @@ function Quote(props) {
     } else return (
       <>
  
-                    <div className="card">
-                    <div className="card-content">  
-                      <p className="title">
-                        {quote.title}
-                      </p>
-                    </div>
-                    <footer className="card-footer">
-                    <p className="card-footer-item">
-                    <span>
-                    {quote.author}
-                    </span>
-                    </p>
-                    <p className="card-footer-item">
-                    <span>
-                    {quote.likes} likes
-                    </span>
-                    </p>
-                    </footer>
-                    </div>
+        <div className="card mt-6">
+          
+          <div className="card-content">  
+            <p className="title">
+              {quote.title}
+            </p>
+          </div>
+          
+          <footer className="card-footer">
+            <p className="card-footer-item">
+              <span>
+              {quote.author}
+              </span>
+            </p>
+            
+            <p className="card-footer-item">
+              <span>
+                {quote.likes} likes
+              </span>
+            </p>
+          </footer>
+          </div>
 
-                    <article className="message is-dark">
-                    {quote.comments.map((item, i) => (
-                    <div className="message-body">
-                    <li key={item + i}>
-                      {item}
-                    </li>
-                    </div>
-                    ))}
-                    
-                    
-                    
-                    </article>
-
-                    
-
-                    <AddComment addComment={addComment}/>
-
-                    <AddLike addLike={addLike}/>
+          <article className="message is-dark">
+            <ul>
+            {quote.comments.map((item) => (
+              <div className="message-body mt-5">
+                <li key={item}> 
+                  {item}
+                </li>
+              </div>
+              ))}  
+              </ul>                  
+          </article>
+          
+          <AddComment addComment={addComment}/>
+          <AddLike addLike={addLike}/>
 
       </>
     );
