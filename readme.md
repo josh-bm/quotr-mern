@@ -1,2 +1,0 @@
-# quotr-mern
- 
