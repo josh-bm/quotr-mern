@@ -14,7 +14,7 @@ function Quotes(props) {
                 return (
                   <li key={quote._id}> 
                     <Link to={`/quote/${quote._id}`}>
-                    <div className="card">
+                    <div className="card  mt-6">
                     <div className="card-content">  
                       <p className="title">
                         {quote.title}

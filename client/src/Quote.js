@@ -30,21 +30,16 @@ function Quote(props) {
       postData();
     }
 
-    function addLike(like) {
-      console.log(like);
+    function addLike() {
     
-      const data = { 
-        likes: like
-      };
       const postData = async () => {
-        const url = `${API_URL}/quotes/${id}`;
+        const url = `${API_URL}/quotes/${id}/likes`;
     
         const response = await fetch(url, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
+          }
         });
         const reply = await response.json();
         console.log(reply);
