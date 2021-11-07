@@ -1,9 +1,6 @@
 {
   "name": "node-api-server",
   "version": "1.0.0",
-  "engines":{
-    "node":"16.13.0"
-  },
   "type": "module",
   "main": "server.js",
   "scripts": {
