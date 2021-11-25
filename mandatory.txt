@@ -1,3 +1,7 @@
 Joshua Bacurio Mercado WU-F21v
 https://quotr-mern.herokuapp.com/
 https://github.com/josh-bm/quotr-mern
+
+
+Problems:
+- Problems with updating page. I have not made it work so that it automatically refreshes the page when liked or when a comment is posted.
